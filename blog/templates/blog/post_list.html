@@ -7,16 +7,12 @@
             <h1><a href="/">Proyecto Django</a></h1>
         </div>
 
-        <div>
-            <p>published: 02.11.2019, 11:39</p>
-            <h2><a href="">Primera publicacion</a></h2>
-            <p>wowowowow que genial</p>
-        </div>
-
-        <div>
-            <p>published: 02.11.2019, 11:45</p>
-            <h2><a href="">Segunda publicacion</a></h2>
-            <p>ya quiero que se acabe el semestre por fabor</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
